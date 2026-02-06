@@ -1,0 +1,242 @@
+<section class="features-section">
+  <div class="container">
+    <p class="subtitle">Getting the best of <span class="chute">both worlds</span> is simply better, isn't it?</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-image arch">
+          <video 
+              autoplay 
+              muted 
+              loop 
+              playsinline
+              class="feature-video"
+            >
+              <source src="/theme-room.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+          </video>
+        </div>
+        <h3 class="feature-title">Rooms with Character</h3>
+        <p class="feature-description">
+          Each room is thoughtfully designed with its own unique style.Inspired by music, automobiles, retro charm, and bohemian elegance, every space reflects comfort, character, and quiet luxury. No two rooms are alike, each stay feels personal and unforgettable.
+        </p>
+      </div>
+
+      <div class="feature-card offset-top">
+        <div class="feature-image arch">
+          <video 
+              autoplay 
+              muted 
+              loop 
+              playsinline
+              class="feature-video"
+            >
+              <source src="/common-area.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+          </video>
+        </div>
+        <h3 class="feature-title red">Spaces to Pause</h3>
+        <p class="feature-description">
+          Our shared spaces are created for moments of calm and connection. From open-air lounges under the sky to serene indoor seating with soft music and curated experiences, every corner invites you to slow down, unwind, and enjoy refined comfort.
+        </p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-image circle">
+          <video 
+              autoplay 
+              muted 
+              loop 
+              playsinline
+              class="feature-video"
+            >
+              <source src="/asthetic.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+          </video>
+        </div>
+        <h3 class="feature-title red">Its all about asthetic</h3>
+        <p class="feature-description">
+          Every floor tells a story. The moment you step out of the lift, a thoughtfully curated theme welcomes you. From musical legends and light-hearted humor to timeless pop culture and nostalgic favorites, each level creates a unique mood, inviting you to relive memories, smile a little more, and feel inspired.
+        </p>
+      </div>
+
+      <div class="feature-card offset-top">
+        <div class="feature-image circle">
+          <video 
+              autoplay 
+              muted 
+              loop 
+              playsinline
+              class="feature-video"
+            >
+              <source src="/roof-top-cafe.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+          </video>
+        </div>
+        <h3 class="feature-title red">Rooftop cafe</h3>
+        <p class="feature-description">
+          An elevated dining experience under the stars. Enjoy handcrafted dishes, gentle breezes, and tranquil surroundings. Our rooftop café blends fine taste with a peaceful ambiance, where every evening feels special.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .lund{
+    font-family: 'Pinyon Script';
+    font-size: 42px;
+    background: linear-gradient(to bottom, #ecc378, #d2a14a);
+     -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  .chute{
+    font-family: 'pacifico';
+    font-size: 42px;
+    background: linear-gradient(to bottom, #ecc378, #d2a14a);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+}
+  .features-section {
+    padding: 80px 20px;
+  }
+
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .subtitle {
+    font-family: 'Koulen', sans-serif;
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+  }
+
+  .explore-btn {
+    display: block;
+    margin: 0 auto 60px;
+    padding: 14px 40px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .explore-btn:hover {
+    background-color: #f57c00;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    align-items: start;
+  }
+
+  .feature-card {
+    text-align: center;
+  }
+
+  .feature-card.offset-top {
+    margin-top: 80px;
+  }
+
+  .feature-image {
+    width: 100%;
+    max-width: 280px;
+    height: 280px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    position: relative;
+    /* border: 4px solid transparent; */
+    transition: all 0.5s ease;
+    border-radius: 50%;
+  }
+
+  .feature-image:hover {
+    border-color: #ff9800;
+    border-radius: 20%;
+  }
+
+  .feature-image.arch {
+    border-radius: 50%;
+  }
+
+  .feature-image.arch:hover {
+    border-radius: 20%;
+  }
+
+  .feature-image.circle {
+    border-radius: 50%;
+  }
+
+  .feature-image.circle:hover {
+    border-radius: 20%;
+  }
+
+  .feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .feature-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .feature-title.orange {
+    color: #ff9800;
+  }
+
+  .feature-title.red {
+    color: #e91e63;
+  }
+
+  .feature-description {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    max-width: 280px;
+    margin: 0 auto;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-height 0.3s ease;
+  }
+
+  .feature-card:hover .feature-description {
+    opacity: 1;
+    max-height: 200px;
+  }
+
+  @media (max-width: 768px) {
+    .features-section {
+      padding: 60px 20px;
+    }
+
+    .features-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .feature-card.offset-top {
+      margin-top: 0;
+    }
+
+    .feature-image {
+      max-width: 240px;
+      height: 240px;
+    }
+  }
+</style>

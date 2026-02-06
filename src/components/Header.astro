@@ -1,0 +1,117 @@
+<section>
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent flex justify-between items-center px-[50px] transition-all duration-500">
+        
+        <a href="/" class="group relative block w-[120px] h-[80px] overflow-hidden h-[24px]">
+            <div class="transition-transform duration-500 ease-in-out group-hover:-translate-y-1/2">
+                <img class="w-[120px] h-[80px] object-contain" alt='logo-1' src="/haven-logo.png"/>
+                <img class="w-[120px] h-[80px] object-contain" alt='logo-2' src="/haven-logo.png"/>
+            </div>
+        </a>
+
+        <div class="flex justify-center items-center gap-16">
+            {[
+                { name: 'Home', hover: 'Home', href: '/' },
+                { name: 'Rooms', hover: 'Rooms', href: '/rooms' },
+                { name: 'Gallery', hover: 'Gallery', href: '#' },
+                { name: 'Contact Us', hover: 'Contact Us', href: '#contact' },
+                { name: 'About Us', hover: 'About Us', href: '/about' }
+            ].map((link) => (
+                <a href={link.href} class="group relative block overflow-hidden h-[24px]">
+                    <div class="transition-transform duration-500 ease-in-out group-hover:-translate-y-1/2">
+                        <div class="flex flex-col">
+                            <span class="h-[24px] flex items-center text-white text-base font-semibold transition-all duration-200">
+                                {link.name}
+                            </span>
+                            <span class="h-[24px] flex items-center text-[#ecc378] text-base font-extrabold">
+                                {link.hover}
+                            </span>
+                        </div>
+                    </div>
+                </a>
+            ))}
+        </div>
+    </nav>
+</section>
+
+<script>
+    const navbar = document.getElementById('navbar');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const colorStops = [
+        { scroll: 0, color: { r: 79, g: 107, b: 69 }, opacity: 0.15 },      // Very light at start
+        { scroll: 400, color: { r: 75, g: 102, b: 65 }, opacity: 0.30 },   // After Hero
+        { scroll: 800, color: { r: 70, g: 95, b: 60 }, opacity: 0.45 },    // HotelRoomCard section
+        { scroll: 1200, color: { r: 65, g: 88, b: 55 }, opacity: 0.60 },   // FeatureSection
+        { scroll: 1600, color: { r: 58, g: 78, b: 50 }, opacity: 0.75 },   // QminSection
+        { scroll: 2000, color: { r: 52, g: 70, b: 45 }, opacity: 0.90 },   // CompanySlider
+        { scroll: 2400, color: { r: 45, g: 61, b: 38 }, opacity: 1.5 }     // Footer - fully dark
+    ];
+    
+    function interpolateColor(scroll) {
+        let lowerStop = colorStops[0];
+        let upperStop = colorStops[colorStops.length - 1];
+        
+        for (let i = 0; i < colorStops.length - 1; i++) {
+            if (scroll >= colorStops[i].scroll && scroll <= colorStops[i + 1].scroll) {
+                lowerStop = colorStops[i];
+                upperStop = colorStops[i + 1];
+                break;
+            }
+        }
+        if (scroll >= colorStops[colorStops.length - 1].scroll) {
+            const lastStop = colorStops[colorStops.length - 1];
+            return {
+                r: lastStop.color.r,
+                g: lastStop.color.g,
+                b: lastStop.color.b,
+                opacity: lastStop.opacity
+            };
+        }
+        const range = upperStop.scroll - lowerStop.scroll;
+        const progress = (scroll - lowerStop.scroll) / range;
+        
+        const easedProgress = 1 - Math.pow(1 - progress, 4);
+        
+        const r = Math.round(lowerStop.color.r + (upperStop.color.r - lowerStop.color.r) * easedProgress);
+        const g = Math.round(lowerStop.color.g + (upperStop.color.g - lowerStop.color.g) * easedProgress);
+        const b = Math.round(lowerStop.color.b + (upperStop.color.b - lowerStop.color.b) * easedProgress);
+        const opacity = lowerStop.opacity + (upperStop.opacity - lowerStop.opacity) * easedProgress;
+        
+        return { r, g, b, opacity };
+    }
+    
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 50) {
+            const { r, g, b, opacity } = interpolateColor(currentScroll);
+            
+            navbar.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${opacity})`;
+            navbar.classList.add('shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]');
+            
+            if (opacity < 0.9) {
+                navbar.style.backdropFilter = 'blur(10px)';
+            } else {
+                navbar.style.backdropFilter = 'none';
+            }
+            
+            navLinks.forEach(link => {
+                link.classList.remove('text-white', 'hover:text-[#ecc378]');
+                link.classList.add('bg-gradient-to-b', 'from-[#ecc378]', 'to-[#d2a14a]', 'bg-clip-text', 'text-transparent');
+            });
+        } else {
+            navbar.style.backgroundColor = 'transparent';
+            navbar.style.backdropFilter = 'none';
+            navbar.classList.remove('shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]');
+            
+            navLinks.forEach(link => {
+                link.classList.add('text-white', 'hover:text-[#ecc378]');
+                link.classList.remove('bg-gradient-to-b', 'from-[#ecc378]', 'to-[#d2a14a]', 'bg-clip-text', 'text-transparent');
+            });
+        }
+    });
+</script>
+<style>
+    span {
+        white-space: nowrap;
+    }
+</style>

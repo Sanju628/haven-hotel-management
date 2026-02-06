@@ -1,0 +1,88 @@
+---
+import Header from '../components/Header.astro';
+import HeroComponent from '../components/HeroComponent.astro';
+import Layout from '../layouts/Layout.astro';
+import HotelRoomCard from '../components/hotel-details/HotelRoomCard';
+import FeatureSection from '../components/FeatureSection.astro';
+import QminSection from '../components/QminSection';
+import CompanySlider from '../components/CompanySlider';
+import CompanyFooter from '../components/CompanyFooter'
+import CursorFollower from '../components/CursorFollower';
+import IntentionPage from '../components/IntentionPage';
+import AnimatedCounter from '../components/AnimatedCounter';
+import MovableGrid from '../components/MovableGrid';
+
+
+const hotelCards = [
+	{
+		cardImageUrl: ['/Deluxe/deluxe1.png','/Deluxe/deluxe2.png','/Deluxe/deluxe3.png'],
+		title: 'Deluxe Room',
+		facilities: [
+			{facilityImg: '/bathroom.svg',facilityName: '1 Bathroom'},
+			{facilityImg: '/bed-size.svg',facilityName: '1 Double Bed'},
+			{facilityImg: '/room-dim.png',facilityName: '250 sq.ft (23 sq.mt)'},
+			{facilityImg: '/window.png',facilityName: 'City View'}
+		],
+		roomAmenities: ['Study Room','Iron/Ironing Board','Wi-Fi','Interconnected Room','Smoking Room','Mineral Water - additional charge']
+	},
+	{	cardImageUrl: ['/Executive/exe3.png','/Executive/exe1.jpg','/Executive/exe2.jpg'],
+		title: 'Executive Room',
+		facilities: [
+			{facilityImg: '/bathroom.svg',facilityName: '1 Bathroom'},
+			{facilityImg: '/bed-size.svg',facilityName: '1 Double Bed'},
+			{facilityImg: '/room-dim.png',facilityName: '280 sq.ft (23 sq.mt)'},
+			{facilityImg: '/window.png',facilityName: 'City View'}
+		],
+		roomAmenities: ['Heater - Additional charges','Iron/Ironing Board','Wi-Fi','Interconnected Room','Smoking Room','Mineral Water - additional charge']
+	},
+	{	cardImageUrl: ['/Premium/premium1.jpg','/Premium/premium2.png','/Premium/premium3.jpg'],
+		title: 'Premium Suite',
+		facilities: [
+			{facilityImg: '/bathroom.svg',facilityName: '1 Bathroom'},
+			{facilityImg: '/bed-size.svg',facilityName: '1 Double Bed'},
+			{facilityImg: '/room-dim.png',facilityName: '300 sq.ft (23 sq.mt)'},
+		],
+		roomAmenities: ['Study Room','Iron/Ironing Board','Wi-Fi','24-hour Room Service','Smoking Room','Mineral Water - additional charge']
+	}
+]
+---
+
+<Layout>
+	<Header/>
+	<CursorFollower client:load/>
+	<HeroComponent/>
+	<section class="mt-12 mb-12">
+		<HotelRoomCard hotelData={hotelCards} client:load/>
+	</section>
+	<section class="flex justify-around" 
+		style={{
+		backgroundImage: `repeating-linear-gradient(
+		to right,
+		rgba(30, 60, 50, 0.55) 0px,
+		rgba(30, 60, 50, 0.55) 2px,
+		transparent 2px,
+		transparent 18px
+		)`,
+		backgroundColor: '#1a2420'
+	}}>
+		<AnimatedCounter end = {100000} label = "Happy Guests Served" client:visible />
+		<AnimatedCounter end = {6} label = "Years of Hospitality" client:visible />
+		<AnimatedCounter end = {1500000} label = "Food Orders Completed" client:visible />
+	</section>
+	<IntentionPage/>
+	<section>
+		<FeatureSection/>
+	</section>
+	<section>
+		<QminSection  client:load/>
+	</section>
+	<section>
+		<CompanySlider  client:load/>
+	</section>
+	<section>
+		<MovableGrid client:load/>
+	</section>
+	<footer id="contact">
+		<CompanyFooter  client:load/>
+	</footer>
+</Layout>
