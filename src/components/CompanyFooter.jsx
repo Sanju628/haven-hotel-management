@@ -34,13 +34,34 @@ export default function HavelHotelFooter() {
   return (
     <footer
       style={{
-        // background: "#2D3D26",
         color: "#fff",
         padding: "60px 20px 150px 20px",
         fontFamily: "Arial, sans-serif",
       }}
     >
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
+      <div style={{ maxWidth: "1300px", margin: "0 auto" }}>
+        <div>
+          <p
+            style={{
+              fontSize: "14px",
+              marginBottom: "32px",
+              color: "#2D3D26",
+            }}
+          >
+            Haven Hotel is a premium boutique hotel in Gurgaon located in Sector
+            31, offering stylish rooms, modern amenities and personalized
+            hospitality for business and leisure travelers. The hotel enjoys a
+            strategic location near major business hubs such as Cyber City,
+            Udyog Vihar, Sector 44 corporate offices and Golf Course Road, with
+            easy access to NH-48 and HUDA City Centre Metro Station. Prime
+            attractions like Ambience Mall and popular commercial zones are just
+            a short drive away. Haven Hotel is also conveniently close to
+            leading hospitals including Medanta - The Medicity, Fortis Memorial
+            Research Institute, and Artemis Hospital, making it a preferred
+            choice for guests searching for the best hotel in Gurgaon with
+            comfort, connectivity, and convenience in one place.
+          </p>
+        </div>
         <div
           style={{
             display: "grid",

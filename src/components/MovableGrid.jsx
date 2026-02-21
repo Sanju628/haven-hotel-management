@@ -20,8 +20,12 @@ const columns = [
     bottom: { height: "h-[180px]", bg: "bg-gray-100", text: "Lonely Planet" },
   },
   {
-    top: { height: "h-[160px]", bg: "bg-white", text: "TripAdvisor" },
-    bottom: { height: "h-[260px]", bg: "bg-yellow-400", text: "GQ" },
+    top: { height: "h-[160px]", bg: "bg-white", text: "GQ" },
+    bottom: {
+      height: "h-[350px]",
+      bg: "bg-yellow-400",
+      img: "/grid-img6.jpeg",
+    },
   },
   {
     top: { height: "h-[280px]", bg: "bg-white", img: "/grid-img3.png" },

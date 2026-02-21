@@ -1,7 +1,12 @@
 ---
+import Header from '../components/Header.astro'
 import HotelDetailPage from '../components/hotel-details/HotelDetailPage'
+import Layout from '../layouts/Layout.astro'
 ---
 
-<section>
-    <HotelDetailPage client:load/>
-</section>
+<Layout>
+    <Header/>
+    <section class="pt-[100px] px-6">
+        <HotelDetailPage client:load/>
+    </section>
+</Layout>

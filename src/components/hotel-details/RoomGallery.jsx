@@ -2,9 +2,23 @@ import { useState } from "react";
 
 export default function RoomGallery({ images }) {
   const [open, setOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const visibleImages = images.slice(0, 5);
   const remaining = images.length - 5;
+
+  const openModal = (index) => {
+    setCurrentIndex(index);
+    setOpen(true);
+  };
+
+  const goNext = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
+  const goPrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
 
   return (
     <>
@@ -24,14 +38,14 @@ export default function RoomGallery({ images }) {
               position: "relative",
               cursor: "pointer",
             }}
-            onClick={() => setOpen(true)}
+            onClick={() => openModal(index)}
           >
             <img
               src={img}
               alt=""
               style={{
                 width: "100%",
-                height: "192px",
+                height: "190px",
                 objectFit: "cover",
                 borderRadius: "8px",
                 display: "block",
@@ -48,7 +62,7 @@ export default function RoomGallery({ images }) {
                   alignItems: "center",
                   justifyContent: "center",
                   color: "#fff",
-                  fontSize: "20px",
+                  fontSize: "14px",
                   fontWeight: 600,
                   borderRadius: "8px",
                 }}
@@ -60,54 +74,90 @@ export default function RoomGallery({ images }) {
         ))}
       </div>
 
-      {/* Full Gallery Modal */}
+      {/* Carousel Modal */}
       {open && (
         <div
           style={{
             position: "fixed",
             inset: 0,
-            backgroundColor: "rgba(0,0,0,0.8)",
-            zIndex: 50,
-            overflowY: "auto",
+            backgroundColor: "rgba(0,0,0,0.9)",
+            zIndex: 1000,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
+          {/* Close Button */}
           <button
             onClick={() => setOpen(false)}
             style={{
               position: "absolute",
-              top: "16px",
-              right: "24px",
+              top: "20px",
+              right: "30px",
+              fontSize: "28px",
               background: "none",
               border: "none",
               color: "#fff",
-              fontSize: "24px",
               cursor: "pointer",
             }}
           >
             ✕
           </button>
 
-          <div
+          {/* Prev Button */}
+          <button
+            onClick={goPrev}
             style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-              gap: "16px",
-              padding: "24px",
+              position: "absolute",
+              left: "30px",
+              fontSize: "40px",
+              background: "none",
+              border: "none",
+              color: "#fff",
+              cursor: "pointer",
             }}
           >
-            {images.map((img, i) => (
-              <img
-                key={i}
-                src={img}
-                alt=""
-                style={{
-                  width: "100%",
-                  height: "256px",
-                  objectFit: "cover",
-                  borderRadius: "8px",
-                }}
-              />
-            ))}
+            ‹
+          </button>
+
+          {/* Image */}
+          <img
+            src={images[currentIndex]}
+            alt=""
+            style={{
+              maxWidth: "90%",
+              maxHeight: "80vh",
+              borderRadius: "12px",
+              objectFit: "contain",
+            }}
+          />
+
+          {/* Next Button */}
+          <button
+            onClick={goNext}
+            style={{
+              position: "absolute",
+              right: "30px",
+              fontSize: "40px",
+              background: "none",
+              border: "none",
+              color: "#fff",
+              cursor: "pointer",
+            }}
+          >
+            ›
+          </button>
+
+          {/* Counter */}
+          <div
+            style={{
+              position: "absolute",
+              bottom: "30px",
+              color: "#fff",
+              fontSize: "16px",
+            }}
+          >
+            {currentIndex + 1} / {images.length}
           </div>
         </div>
       )}

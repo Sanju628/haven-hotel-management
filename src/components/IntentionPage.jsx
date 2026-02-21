@@ -26,7 +26,7 @@ export default function IntentionPage() {
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: "url('/bg-crowd.jpg')",
+          // backgroundImage: "url('/bg-crowd.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           transform: `translateY(${scrollY * 0.3}px)`,
@@ -192,15 +192,15 @@ export default function IntentionPage() {
           {[
             {
               title: "Business Guests",
-              desc: "High-speed internet, a comfortable work desk, and a peaceful space to stay focused, plus easy access to major office hubs for your daily commute.",
+              desc: "Business travelers enjoy free high-speed Wi-Fi, a comfortable work desk and a quiet workspace to stay focused, plus convenient access to major office hubs for an effortless daily commute.",
             },
             {
               title: "Production Teams",
-              desc: "When you're on shoot, we've got your back. Secure space for your equipment, safe storage for props, and a calm place to recharge after long, demanding days.",
+              desc: "When your production team is on location, we've got your back. Secure storage for equipment and props, plus a quiet lounge to relax and recharge after long, demanding days on set.",
             },
             {
               title: "Families & Leisure",
-              desc: "Spacious rooms to relax, unwind, and spend quality time together. From peaceful stays to memorable moments, everything you need is right here.",
+              desc: "Families enjoy spacious rooms to relax, unwind and spend quality time together. With family-friendly amenities and nearby attractions, everything you need for a memorable stay is right here.",
             },
           ].map((card, i) => (
             <div

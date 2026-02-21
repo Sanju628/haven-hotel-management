@@ -30,9 +30,7 @@ export default function HotelDetailPage() {
           >
             {room.title}
           </h2>
-
           <RoomGallery images={room.roomGallery} />
-
           <div
             style={{
               display: "grid",

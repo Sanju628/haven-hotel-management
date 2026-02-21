@@ -1,14 +1,15 @@
+---
+import HamburgerMenu from '../components/HamburgerMenu'
+---
 <section>
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent flex justify-between items-center px-[50px] transition-all duration-500">
-        
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 bg-transparent flex justify-between items-center px-[40px] transition-all duration-500">
         <a href="/" class="group relative block w-[120px] h-[80px] overflow-hidden h-[24px]">
             <div class="transition-transform duration-500 ease-in-out group-hover:-translate-y-1/2">
                 <img class="w-[120px] h-[80px] object-contain" alt='logo-1' src="/haven-logo.png"/>
                 <img class="w-[120px] h-[80px] object-contain" alt='logo-2' src="/haven-logo.png"/>
             </div>
         </a>
-
-        <div class="flex justify-center items-center gap-16">
+        <div class="hidden md:flex justify-center items-center gap-15">
             {[
                 { name: 'Home', hover: 'Home', href: '/' },
                 { name: 'Rooms', hover: 'Rooms', href: '/rooms' },
@@ -16,7 +17,7 @@
                 { name: 'Contact Us', hover: 'Contact Us', href: '#contact' },
                 { name: 'About Us', hover: 'About Us', href: '/about' }
             ].map((link) => (
-                <a href={link.href} class="group relative block overflow-hidden h-[24px]">
+                <a href={link.href} class="nav-link group relative block overflow-hidden h-[24px]">
                     <div class="transition-transform duration-500 ease-in-out group-hover:-translate-y-1/2">
                         <div class="flex flex-col">
                             <span class="h-[24px] flex items-center text-white text-base font-semibold transition-all duration-200">
@@ -29,6 +30,9 @@
                     </div>
                 </a>
             ))}
+        </div>
+        <div class="md:hidden">
+            <HamburgerMenu client:load/>
         </div>
     </nav>
 </section>
