@@ -70,47 +70,16 @@ export default function AnimatedCounter({
   };
 
   return (
-    <div ref={counterRef} style={{ padding: "80px 20px" }}>
-      <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
-        <div
-          style={{
-            display: "flex",
-            gap: "80px",
-            alignItems: "flex-start",
-            flexWrap: "wrap",
-          }}
-        >
-          {/* Left side - Counter */}
-          <div style={{ flex: "1 1 400px" }}>
-            <h2
-              style={{
-                fontSize: "18px",
-                marginBottom: "10px",
-                color: "#fff",
-              }}
-            >
-              Over
-            </h2>
-            <div
-              style={{
-                fontSize: "clamp(80px, 12vw, 40px)",
-                fontWeight: 700,
-                color: "#c8a24d",
-                lineHeight: 1,
-                marginBottom: "20px",
-              }}
-            >
+    <div ref={counterRef} className="py-8 px-5 md:py-20">
+      <div className="max-w-[1200px] mx-auto">
+        <div className="flex gap-20 items-start flex-wrap">
+          <div className="flex-[1_1_400px]">
+            <h2 className="text-lg mb-2.5 text-white">Over</h2>
+            <div className="text-[clamp(40px,12vw,40px)] md:text-[clamp(50px,12vw,40px)] lg:text-[clamp(70px,12vw,40px)] font-bold text-[#c8a24d] leading-none mb-5">
               {formatNumber(count)}
-              <span style={{ fontSize: "0.5em", marginLeft: "8px" }}>+</span>
+              <span className="text-[0.5em] ml-2">+</span>
             </div>
-            <h3
-              style={{
-                fontSize: "24px",
-                color: "#fff",
-                marginBottom: "16px",
-                fontWeight: 600,
-              }}
-            >
+            <h3 className="text-2xl sm:text-xl md:text-xl text-white mb-4 font-semibold">
               {label}
             </h3>
           </div>

@@ -7,18 +7,13 @@ export default function ImageCarousel({ images }) {
   const [isHovered, setIsHovered] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
 
-  // Detect touch devices (mobile + iPad)
   useEffect(() => {
     const touch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
     setIsTouchDevice(touch);
   }, []);
 
-  // Autoplay logic
   useEffect(() => {
     if (imageArray.length <= 1) return;
-
-    // Touch devices → autoplay
-    // Desktop → autoplay only on hover
     if (!isTouchDevice && !isHovered) return;
 
     const interval = setInterval(() => {
@@ -51,7 +46,6 @@ export default function ImageCarousel({ images }) {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Images */}
       {imageArray.map((image, index) => (
         <img
           key={index}
@@ -60,8 +54,6 @@ export default function ImageCarousel({ images }) {
           className={`carousel-image ${index === currentIndex ? "active" : ""}`}
         />
       ))}
-
-      {/* Controls */}
       {imageArray.length > 1 && (
         <>
           <button className="carousel-arrow prev" onClick={goToPrevious}>

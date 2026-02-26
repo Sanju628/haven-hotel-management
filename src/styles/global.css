@@ -4,13 +4,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Pacifico:wght@300;400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
-.rooms-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-  padding: 0px 60px;
-}
-
 .room-card {
   background: #ffffff;
   border-radius: 18px;
@@ -166,6 +159,26 @@
 }
 
 .book-btn:hover {
+  background: #d8b765;
+}
+
+.button-text {
+  display: flex;
+  justify-content: center;
+}
+
+.button-text button {
+  padding: 12px 32px;
+  background: #c8a24d;
+  color: black;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  font-size: 15px;
+}
+
+.button-text button:hover {
   background: #d8b765;
 }
 

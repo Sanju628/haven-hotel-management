@@ -22,7 +22,6 @@ export default function RoomGallery({ images }) {
 
   return (
     <>
-      {/* Thumbnail Grid */}
       <div
         style={{
           display: "grid",
@@ -73,8 +72,6 @@ export default function RoomGallery({ images }) {
           </div>
         ))}
       </div>
-
-      {/* Carousel Modal */}
       {open && (
         <div
           style={{
@@ -87,7 +84,6 @@ export default function RoomGallery({ images }) {
             justifyContent: "center",
           }}
         >
-          {/* Close Button */}
           <button
             onClick={() => setOpen(false)}
             style={{
@@ -103,8 +99,6 @@ export default function RoomGallery({ images }) {
           >
             ✕
           </button>
-
-          {/* Prev Button */}
           <button
             onClick={goPrev}
             style={{
@@ -119,8 +113,6 @@ export default function RoomGallery({ images }) {
           >
             ‹
           </button>
-
-          {/* Image */}
           <img
             src={images[currentIndex]}
             alt=""
@@ -131,8 +123,6 @@ export default function RoomGallery({ images }) {
               objectFit: "contain",
             }}
           />
-
-          {/* Next Button */}
           <button
             onClick={goNext}
             style={{
@@ -147,8 +137,6 @@ export default function RoomGallery({ images }) {
           >
             ›
           </button>
-
-          {/* Counter */}
           <div
             style={{
               position: "absolute",

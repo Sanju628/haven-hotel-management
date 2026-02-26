@@ -5,7 +5,6 @@ export default function RoomTypeCard({ data }) {
 
   return (
     <>
-      {/* Card */}
       <div
         style={{
           border: "1px solid #e5e7eb",

@@ -9,7 +9,7 @@ export default function HotelDetailPage() {
       style={{
         display: "flex",
         flexDirection: "column",
-        gap: "64px", // space-y-16
+        gap: "64px",
       }}
     >
       {RoomDetail.map((room, index) => (

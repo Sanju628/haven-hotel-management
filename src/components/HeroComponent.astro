@@ -1,5 +1,7 @@
+---
+import BookingModal from '../components/bookingForm/BookingModal';
+---
 <section class="hero-section">
-  <!-- Background Video -->
   <div class="video-background">
     <video 
       autoplay 
@@ -15,43 +17,8 @@
   <div class="hero-content">
     <h1 class="heading-tag">Refined By Design</h1>
     <p class="subHeading-tag">Where work stays look Better</p>
+    <BookingModal client:load/>
   </div>
-  
-  <section
-    class="booking-bar"
-    role="group"
-    aria-label="Room booking options"
-  >
-    <article class="booking-item">
-      <label class="mb-1" for="checkin">Check-in Date</label>
-      <input id="checkin" type="date" />
-    </article>
-    <article class="booking-item">
-      <label class="mb-1" for="checkout">Check-out Date</label>
-      <input id="checkout" type="date" />
-    </article>
-    <article class="booking-item">
-      <label class="mb-1" for="rooms">No of Rooms</label>
-      <select id="rooms">
-        <option>1 Room</option>
-        <option>2 Room</option>
-        <option>3 Room</option>
-      </select>
-    </article>
-    <article class="booking-item">
-      <label class="mb-1" for="guests">No of Guests</label>
-      <select id="guests">
-        <option>1 Guest</option>
-        <option>2 Guests</option>
-        <option>3 Guests</option>
-        <option>4 Guests</option>
-        <option>5 Guests</option>
-      </select>
-    </article>
-    <aside class="booking-action">
-      <button type="button">Book Now</button>
-    </aside>
-  </section>
 </section>
 
 <style>
@@ -117,38 +84,8 @@
         font-size: 25px;
         font-weight: 400;
         line-height: 100%;
+        margin-bottom: 30px;
     }
-    
-    .booking-bar {
-        width: 80%;
-        z-index: 1;              
-        display: flex;
-        justify-content: space-between;
-        gap: 24px;
-        padding: 20px 28px;
-        border: 1px solid rgba(255,255,255,0.4);
-        background: rgba(255, 255, 255, 0.1);
-        backdrop-filter: blur(80px);
-        border-radius: 12px;
-    }
-    
-    .booking-item {
-        display: flex;
-        flex-direction: column;
-        color: white;
-    }
-    
-    .booking-action button {
-        padding: 14px 28px;
-        background: #c8a24d;
-        color: black;
-        border-radius: 8px;
-        font-weight: 600;
-        cursor: pointer;
-        border: none;
-    }
-
-    /* Audio Control Button */
     .audio-control {
         position: fixed;
         bottom: 30px;

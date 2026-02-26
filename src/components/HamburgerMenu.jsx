@@ -5,7 +5,6 @@ export default function HamburgerMenu() {
 
   return (
     <>
-      {/* Hamburger Button */}
       <button
         onClick={() => setOpen(true)}
         style={{
@@ -32,8 +31,6 @@ export default function HamburgerMenu() {
           </svg>
         )}
       </button>
-
-      {/* Overlay */}
       {open && (
         <div
           onClick={() => setOpen(false)}
@@ -45,8 +42,6 @@ export default function HamburgerMenu() {
           }}
         />
       )}
-
-      {/* Slide Menu */}
       <div
         style={{
           position: "fixed",
@@ -62,7 +57,6 @@ export default function HamburgerMenu() {
           color: "#fff",
         }}
       >
-        {/* Header Row */}
         <div
           style={{
             display: "flex",
@@ -74,8 +68,6 @@ export default function HamburgerMenu() {
           <h3 style={{ margin: 0, fontSize: "18px", letterSpacing: "1px" }}>
             Menu
           </h3>
-
-          {/* Close Button */}
           <button
             onClick={() => setOpen(false)}
             style={{
@@ -99,16 +91,12 @@ export default function HamburgerMenu() {
             </svg>
           </button>
         </div>
-
-        {/* Border */}
         <div
           style={{
             height: "1px",
             backgroundColor: "rgba(255,255,255,0.2)",
           }}
         />
-
-        {/* Nav List */}
         <ul
           style={{
             listStyle: "none",
@@ -116,11 +104,21 @@ export default function HamburgerMenu() {
             margin: 0,
           }}
         >
-          <li style={linkStyle}>Home</li>
-          <li style={linkStyle}>Rooms</li>
-          <li style={linkStyle}>Gallery</li>
-          <li style={linkStyle}>Contact Us</li>
-          <li style={linkStyle}>About Us</li>
+          <li style={linkStyle}>
+            <a href="/">Home</a>
+          </li>
+          <li style={linkStyle}>
+            <a href="/rooms">Rooms</a>
+          </li>
+          <li style={linkStyle}>
+            <a href="#">Gallery</a>
+          </li>
+          <li style={linkStyle}>
+            <a href="#contact">Contact Us</a>
+          </li>
+          <li style={linkStyle}>
+            <a href="/about">About Us</a>
+          </li>
         </ul>
       </div>
     </>

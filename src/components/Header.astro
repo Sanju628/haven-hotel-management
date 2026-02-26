@@ -9,7 +9,7 @@ import HamburgerMenu from '../components/HamburgerMenu'
                 <img class="w-[120px] h-[80px] object-contain" alt='logo-2' src="/haven-logo.png"/>
             </div>
         </a>
-        <div class="hidden md:flex justify-center items-center gap-15">
+        <div id="desktop-nav" class="hidden md:flex justify-center items-center gap-15">
             {[
                 { name: 'Home', hover: 'Home', href: '/' },
                 { name: 'Rooms', hover: 'Rooms', href: '/rooms' },
@@ -39,15 +39,16 @@ import HamburgerMenu from '../components/HamburgerMenu'
 
 <script>
     const navbar = document.getElementById('navbar');
-    const navLinks = document.querySelectorAll('.nav-link');
+    const desktopNav = document.getElementById('desktop-nav');
+    const navLinks = desktopNav ? desktopNav.querySelectorAll('.nav-link') : [];
     const colorStops = [
-        { scroll: 0, color: { r: 79, g: 107, b: 69 }, opacity: 0.15 },      // Very light at start
-        { scroll: 400, color: { r: 75, g: 102, b: 65 }, opacity: 0.30 },   // After Hero
-        { scroll: 800, color: { r: 70, g: 95, b: 60 }, opacity: 0.45 },    // HotelRoomCard section
-        { scroll: 1200, color: { r: 65, g: 88, b: 55 }, opacity: 0.60 },   // FeatureSection
-        { scroll: 1600, color: { r: 58, g: 78, b: 50 }, opacity: 0.75 },   // QminSection
-        { scroll: 2000, color: { r: 52, g: 70, b: 45 }, opacity: 0.90 },   // CompanySlider
-        { scroll: 2400, color: { r: 45, g: 61, b: 38 }, opacity: 1.5 }     // Footer - fully dark
+        { scroll: 0, color: { r: 79, g: 107, b: 69 }, opacity: 0.15 },     
+        { scroll: 400, color: { r: 75, g: 102, b: 65 }, opacity: 0.30 },   
+        { scroll: 800, color: { r: 70, g: 95, b: 60 }, opacity: 0.45 },   
+        { scroll: 1200, color: { r: 65, g: 88, b: 55 }, opacity: 0.60 },  
+        { scroll: 1600, color: { r: 58, g: 78, b: 50 }, opacity: 0.75 },   
+        { scroll: 2000, color: { r: 52, g: 70, b: 45 }, opacity: 0.90 },   
+        { scroll: 2400, color: { r: 45, g: 61, b: 38 }, opacity: 1.5 }
     ];
     
     function interpolateColor(scroll) {
@@ -82,8 +83,19 @@ import HamburgerMenu from '../components/HamburgerMenu'
         
         return { r, g, b, opacity };
     }
+
+    function resetNavbar() {
+        navbar.style.backgroundColor = 'rgba(52, 70, 45, 0.95)';
+        navbar.style.backdropFilter = 'none';
+        navbar.classList.remove('shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]');
+    }
+
     
     window.addEventListener('scroll', () => {
+        if (window.innerWidth < 768) {
+            resetNavbar();
+            return;
+        }
         const currentScroll = window.pageYOffset;
         
         if (currentScroll > 50) {
@@ -103,6 +115,7 @@ import HamburgerMenu from '../components/HamburgerMenu'
                 link.classList.add('bg-gradient-to-b', 'from-[#ecc378]', 'to-[#d2a14a]', 'bg-clip-text', 'text-transparent');
             });
         } else {
+            resetNavbar();
             navbar.style.backgroundColor = 'transparent';
             navbar.style.backdropFilter = 'none';
             navbar.classList.remove('shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]');
@@ -111,6 +124,11 @@ import HamburgerMenu from '../components/HamburgerMenu'
                 link.classList.add('text-white', 'hover:text-[#ecc378]');
                 link.classList.remove('bg-gradient-to-b', 'from-[#ecc378]', 'to-[#d2a14a]', 'bg-clip-text', 'text-transparent');
             });
+        }
+    });
+    window.addEventListener('resize', () => {
+        if (window.innerWidth < 768) {
+            resetNavbar();
         }
     });
 </script>

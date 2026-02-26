@@ -11,11 +11,11 @@ import Layout from "../layouts/Layout.astro";
         </section>
         <section class="px-12">
             <section class="my-[32px]">
-                <h1>about Haven</h1>
+                <h1 class="heading">About Haven</h1>
             </section>
             <section class="flex flex-col gap-2 mb-[24px]">
-                <p>A Boutique Stay in the Heart of Gurgaon</p>
-                <p>
+                <p class="sub-heading">A Boutique Stay in the Heart of Gurgaon</p>
+                <p class="text-sm">
                     Haven Hotel is a premium boutique hotel in Gurgaon designed for travelers who value comfort, style,
                     and personalized hospitality. Blending modern interiors with a warm, welcoming atmosphere, our hotel
                     offers a peaceful retreat in one of the city's most convenient locations. Whether you're visiting for
@@ -24,8 +24,8 @@ import Layout from "../layouts/Layout.astro";
                 </p>
             </section>
             <section class="flex flex-col gap-2 mb-[24px]">
-                <p>Prime Location with Excellent Connectivity</p>
-                <p>
+                <p class="sub-heading">Prime Location with Excellent Connectivity</p>
+                <p class="text-sm">
                     Strategically located in Sector 31, Haven Hotel offers easy access to Gurgaon's major business hubs
                     including Cyber City, Udyog Vihar, and the corporate offices of Sector 44 and Golf Course Road.
                     Guests enjoy seamless connectivity to NH-48 and HUDA City Centre Metro Station, making travel
@@ -34,8 +34,8 @@ import Layout from "../layouts/Layout.astro";
                 </p>
             </section>
             <section class="flex flex-col gap-2 mb-[24px]">
-                <p>Close to Leading Hospitals and Essential Services</p>
-                <p>
+                <p class="sub-heading">Close to Leading Hospitals and Essential Services</p>
+                <p class="text-sm">
                     Haven Hotel is conveniently situated near some of Gurgaon's top healthcare centers, including
                     Medanta - The Medicity, Fortis Memorial Research Institute, and Artemis Hospital. This proximity
                     makes our boutique hotel a preferred choice for medical travelers and families seeking comfortable
@@ -43,17 +43,17 @@ import Layout from "../layouts/Layout.astro";
                 </p>
             </section>
             <section class="flex flex-col gap-2 mb-[24px]">
-                <p>Designed for Comfort, Style, and Experience</p>
-                <p>
-                As a boutique hotel in Gurgaon, Haven Hotel is thoughtfully designed to stand out. Our stylish rooms,
+                <p class="sub-heading">Designed for Comfort,Style and Experience</p>
+                <p class="text-sm">
+                    As a boutique hotel in Gurgaon, Haven Hotel is thoughtfully designed to stand out. Our stylish rooms,
                     curated interiors, and inviting shared spaces create a unique atmosphere that blends modern luxury
                     with homely comfort. Guests enjoy spacious accommodations, high-speed connectivity, and carefully
                     crafted relaxation areas, including our rooftop café and lounge spaces that enhance every stay.
                 </p>
             </section>
             <section class="flex flex-col gap-2">
-                <p>Recognized Among the Best Hotels in Gurgaon</p>
-                <p>
+                <p class="sub-heading">Recognized Among the Best Hotels in Gurgaon</p>
+                <p class="text-sm">
                     At Haven Hotel, our focus is always on delivering exceptional guest experiences through attentive
                     service and attention to detail. From business travelers to families and leisure guests, we create stays
                     that are comfortable, convenient, and personalized. This commitment to quality and hospitality is what
@@ -63,3 +63,16 @@ import Layout from "../layouts/Layout.astro";
         </section>
     </section>
 </Layout>
+
+<style>
+
+    .heading{
+        font-size: 38px;
+        font-family: 'pacifico';
+        color: #ecc378;
+    }
+    .sub-heading{
+        font-family: 'Koulen';
+        font-size: 18px;
+    }
+</style>
