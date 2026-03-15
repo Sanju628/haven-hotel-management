@@ -27,7 +27,7 @@ export const RoomDetail = [
           "10% Off on Laundry service for upto 10 clothing item(s)",
           "Free Cancellation till check-in",
         ],
-        price: "1234",
+        price: "2500",
         taxPerNight: "45",
         viewDetails: [
           {
@@ -65,7 +65,6 @@ export const RoomDetail = [
             title: "Cancellation Policy :",
             cancellationPolicy: [
               "Book with ₹0 Payment",
-              "Free Cancellation(100% refund) if you cancel this booking before 01 Mar, 12:59 PM",
               "Cancellations are only allowed before the Check-In Time. All time mentioned above is in Destination Time.",
             ],
           },
@@ -81,7 +80,7 @@ export const RoomDetail = [
           "10% Off on Laundry service for upto 10 clothing item(s)",
           "Free Cancellation till check-in",
         ],
-        price: "1234",
+        price: "2700",
         taxPerNight: "45",
         viewDetails: [
           {
@@ -119,7 +118,6 @@ export const RoomDetail = [
             title: "Cancellation Policy :",
             cancellationPolicy: [
               "Book with ₹0 Payment",
-              "Free Cancellation(100% refund) if you cancel this booking before 01 Mar, 12:59 PM",
               "Cancellations are only allowed before the Check-In Time. All time mentioned above is in Destination Time.",
             ],
           },
@@ -135,7 +133,7 @@ export const RoomDetail = [
           "10% Off on Laundry service for upto 10 clothing item(s)",
           "Free Cancellation till check-in",
         ],
-        price: "1234",
+        price: "3100",
         taxPerNight: "45",
         viewDetails: [
           {
@@ -173,7 +171,6 @@ export const RoomDetail = [
             title: "Cancellation Policy :",
             cancellationPolicy: [
               "Book with ₹0 Payment",
-              "Free Cancellation(100% refund) if you cancel this booking before 01 Mar, 12:59 PM",
               "Cancellations are only allowed before the Check-In Time. All time mentioned above is in Destination Time.",
             ],
           },
@@ -208,7 +205,7 @@ export const RoomDetail = [
           "10% Off on Laundry service for upto 10 clothing item(s)",
           "Free Cancellation till check-in",
         ],
-        price: "1234",
+        price: "3500",
         taxPerNight: "45",
         viewDetails: [
           {
@@ -246,7 +243,6 @@ export const RoomDetail = [
             title: "Cancellation Policy :",
             cancellationPolicy: [
               "Book with ₹0 Payment",
-              "Free Cancellation(100% refund) if you cancel this booking before 01 Mar, 12:59 PM",
               "Cancellations are only allowed before the Check-In Time. All time mentioned above is in Destination Time.",
             ],
           },
@@ -262,7 +258,7 @@ export const RoomDetail = [
           "10% Off on Laundry service for upto 10 clothing item(s)",
           "Free Cancellation till check-in",
         ],
-        price: "1234",
+        price: "3700",
         taxPerNight: "45",
         viewDetails: [
           {
@@ -300,7 +296,6 @@ export const RoomDetail = [
             title: "Cancellation Policy :",
             cancellationPolicy: [
               "Book with ₹0 Payment",
-              "Free Cancellation(100% refund) if you cancel this booking before 01 Mar, 12:59 PM",
               "Cancellations are only allowed before the Check-In Time. All time mentioned above is in Destination Time.",
             ],
           },
@@ -316,7 +311,7 @@ export const RoomDetail = [
           "10% Off on Laundry service for upto 10 clothing item(s)",
           "Free Cancellation till check-in",
         ],
-        price: "1234",
+        price: "4100",
         taxPerNight: "45",
         viewDetails: [
           {
@@ -354,7 +349,6 @@ export const RoomDetail = [
             title: "Cancellation Policy :",
             cancellationPolicy: [
               "Book with ₹0 Payment",
-              "Free Cancellation(100% refund) if you cancel this booking before 01 Mar, 12:59 PM",
               "Cancellations are only allowed before the Check-In Time. All time mentioned above is in Destination Time.",
             ],
           },
@@ -389,7 +383,7 @@ export const RoomDetail = [
           "10% Off on Laundry service for upto 10 clothing item(s)",
           "Free Cancellation till check-in",
         ],
-        price: "1234",
+        price: "3000",
         taxPerNight: "45",
         viewDetails: [
           {
@@ -427,7 +421,6 @@ export const RoomDetail = [
             title: "Cancellation Policy :",
             cancellationPolicy: [
               "Book with ₹0 Payment",
-              "Free Cancellation(100% refund) if you cancel this booking before 01 Mar, 12:59 PM",
               "Cancellations are only allowed before the Check-In Time. All time mentioned above is in Destination Time.",
             ],
           },
@@ -443,7 +436,7 @@ export const RoomDetail = [
           "10% Off on Laundry service for upto 10 clothing item(s)",
           "Free Cancellation till check-in",
         ],
-        price: "1234",
+        price: "3200",
         taxPerNight: "45",
         viewDetails: [
           {
@@ -481,7 +474,6 @@ export const RoomDetail = [
             title: "Cancellation Policy :",
             cancellationPolicy: [
               "Book with ₹0 Payment",
-              "Free Cancellation(100% refund) if you cancel this booking before 01 Mar, 12:59 PM",
               "Cancellations are only allowed before the Check-In Time. All time mentioned above is in Destination Time.",
             ],
           },
@@ -497,7 +489,7 @@ export const RoomDetail = [
           "10% Off on Laundry service for upto 10 clothing item(s)",
           "Free Cancellation till check-in",
         ],
-        price: "1234",
+        price: "3600",
         taxPerNight: "45",
         viewDetails: [
           {
@@ -535,7 +527,6 @@ export const RoomDetail = [
             title: "Cancellation Policy :",
             cancellationPolicy: [
               "Book with ₹0 Payment",
-              "Free Cancellation(100% refund) if you cancel this booking before 01 Mar, 12:59 PM",
               "Cancellations are only allowed before the Check-In Time. All time mentioned above is in Destination Time.",
             ],
           },
