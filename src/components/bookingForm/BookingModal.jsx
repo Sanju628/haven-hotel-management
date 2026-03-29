@@ -1,11 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import BookingForm from "./BookingForm";
 
-export default function BookingModal() {
-  const [open, setOpen] = useState(false);
+export default function BookingModal({ openBookingModal = false }) {
+  const [open, setOpen] = useState(false || openBookingModal);
 
-  // Lock body scroll when modal is open
-  React.useEffect(() => {
+  useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
@@ -14,9 +13,11 @@ export default function BookingModal() {
 
   return (
     <>
-      <div className="button-text">
-        <button onClick={() => setOpen(true)}>Book Now</button>
-      </div>
+      {!openBookingModal && (
+        <div className="button-text">
+          <button onClick={() => setOpen(true)}>Book Now</button>
+        </div>
+      )}
 
       {open && (
         <div

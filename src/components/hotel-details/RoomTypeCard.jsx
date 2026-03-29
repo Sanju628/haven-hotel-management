@@ -1,7 +1,9 @@
 import { useState } from "react";
+import BookingModal from "../bookingForm/BookingModal";
 
 export default function RoomTypeCard({ data }) {
   const [open, setOpen] = useState(false);
+  const [openBookingModal, setOpenBookingModal] = useState(false);
 
   return (
     <>
@@ -86,26 +88,24 @@ export default function RoomTypeCard({ data }) {
           >
             View Details
           </button>
-
-          <a
-            href="/booking"
+          <button
+            onClick={() => setOpenBookingModal(true)}
             style={{
               marginLeft: "auto",
               background: "#000",
               color: "#fff",
               padding: "10px 16px",
               borderRadius: "10px",
-              textDecoration: "none",
+              border: "none",
+              cursor: "pointer",
               fontSize: "14px",
               fontWeight: "600",
             }}
           >
             Book Now
-          </a>
+          </button>
         </div>
       </div>
-
-      {/* Modal */}
       {open && (
         <div
           style={{
@@ -188,6 +188,7 @@ export default function RoomTypeCard({ data }) {
           </div>
         </div>
       )}
+      {openBookingModal && <BookingModal openBookingModal={openBookingModal} />}
     </>
   );
 }
