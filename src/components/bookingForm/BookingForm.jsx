@@ -269,7 +269,6 @@ export default function BookingForm({ onClose }) {
             [ COMPLETE THE FORM BELOW TO SECURE YOUR ROOM ]
           </p>
           <form onSubmit={handleSubmit}>
-            {/* Guest Info Row */}
             <div className="field-row">
               <div className="field-group">
                 <label className="field-label">
